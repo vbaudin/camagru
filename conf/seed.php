@@ -1,6 +1,6 @@
 <?php
-require_once ("models/user.php");
-require_once __DIR__."/../controllers/user_controller.php";
+require_once ("Models/user.php");
+require_once __DIR__."/../Controllers/user_controller.php";
 
 $pdo = User::open();
 

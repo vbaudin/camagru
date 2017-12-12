@@ -1,3 +1,8 @@
+<?php
+session_start();
+ini_set('display_errors', 1);
+require_once __DIR__."/../Controllers/user_controller.php"?>
+?>
 <!DOCTYPE html>
 <html>
     <head>

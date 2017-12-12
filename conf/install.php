@@ -1,5 +1,5 @@
 <?php
-require_once ("models/model.php");
+require_once ("Models/model.php");
 
 $pdo = Model::open();
 

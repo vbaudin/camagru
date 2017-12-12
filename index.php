@@ -1,8 +1,4 @@
-<?php
-ini_set('display_errors', 1);
-define('ROOT', dirname(__FILE__));
-require_once(ROOT.'/Views/header.php') 
-?>
+<?php require_once(__DIR__.'/Views/header.php'); ?>
 <div class="fake-row"></div>
 <div class="row flex-wrap">
     <aside class="take-pics">
@@ -17,4 +13,4 @@ require_once(ROOT.'/Views/header.php')
 <div class="fake-row"></div>
 <div class="fake-row"></div>
 <div class="fake-row"></div>
-<?php require_once(ROOT.'/Views/footer.php') ?>
+<?php require_once(__DIR__.'/Views/footer.php'); ?>

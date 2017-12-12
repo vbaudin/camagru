@@ -2,47 +2,56 @@
 require_once('Views/header.php');
 $errors = array();
 
-// POUR INSCRIPTION
-if (!empty($_POST))
-{
-    if (empty($_POST['user_username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['user_username'])){
-        $errors['user_username'] = "Invalid username ('a-zA-Z0-9_' allowed)";
-    } else {
-        //CHECK IF USERNAME ALREADY EXIST IN DB
-    }
-    if (empty($_POST['user_email']) || !filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)){
-        $errors['user_email'] = "Invalid email (FILTER_VALIDATE_EMAIL)";
-    } else {
-        //CHECK IF USER_EMAIL ALREADY EXIST IN DB        
-    }
-    if (empty($_POST['user_password']) || $_POST['user_password'] != $_POST['user_password_confirm']){
-        $errors['user_password'] = "Incorrect password";
-    }
-    if (empty($errors)){
-        //ADD USER TO DB
-    }
-}
+// // POUR INSCRIPTION
+// if (!empty($_POST))
+// {
+//     if (empty($_POST['user_username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['user_username'])){
+//         $errors['user_username'] = "Invalid username ('a-zA-Z0-9_' allowed)";
+//     } else {
+//         //CHECK IF USERNAME ALREADY EXIST IN DB
+//     }
+//     if (empty($_POST['user_email']) || !filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)){
+//         $errors['user_email'] = "Invalid email (FILTER_VALIDATE_EMAIL)";
+//     } else {
+//         //CHECK IF USER_EMAIL ALREADY EXIST IN DB        
+//     }
+//     if (empty($_POST['user_password']) || $_POST['user_password'] != $_POST['user_password_confirm']){
+//         $errors['user_password'] = "Incorrect password";
+//     }
+//     if (empty($errors)){
+//         //ADD USER TO DB
+//         $dbh = User::open();
+//         $params = array("username" => $_POST["user_username"],
+//         "mail" => $_POST["user_email"],
+//         "password" => $_POST["user_password"]);
+//         UserController::register($dbh, $params);
+//         User::close($dbh);
+//     }
+// }
 
 // POUR CONNEXION
-if (!empty($_POST))
-{
-    $errors = array();
-    if (!empty($_POST['user_login']) && !empty($_POST['user_password'])){
-        //CHECK IF LOGIN/PASSWORD MATCH THEN CONNECT
-    } else {
-        $errors['login_error'] = "Your login or password is incorrect";
-    }
-}
+// if (!empty($_POST))
+// {
+//     $errors = array();
+//     if (!empty($_POST['user_login']) && !empty($_POST['user_password'])){
+//         //CHECK IF LOGIN/PASSWORD MATCH THEN CONNECT
+//     } else {
+//         $errors['login_error'] = "Your login or password is incorrect";
+//     }
+// }
+$dbh = User::open();
+$messages = UserController::check_user_infos($dbh, $_POST);
+User::close($dbh);
 
 ?>
 <div class="fake-row"></div>
 
 <h2>Please log in or register</h2>
 
-<?php if (!empty($erros)) ?>
+<?php //if (!empty($messages)) {?>
 <div class="txt-error">
     <ul>
-        <?php foreach ($errors as $error){
+        <?php foreach ($messages as $error){
             echo "<li>${error}</li>";
         } ?>
     </ul>
