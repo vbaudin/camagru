@@ -77,5 +77,5 @@ class UserController {
     }
     return $messages;
   }
-
+  
 }
