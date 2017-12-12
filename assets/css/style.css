@@ -106,7 +106,6 @@ h1
     /* margin-left: 45px; */
     margin: auto;
     border-radius: 20px;
-    
 }
 
 .fake-row
@@ -226,4 +225,34 @@ footer
 .footer-txt
 {
     margin: auto;
+}
+
+.video
+{
+    height: 65%;
+    width: 80%;
+    /* margin: auto; WHY IT DIDN'T WORK  */
+    margin-top: 1rem;
+}
+
+.flex-center
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-take-pic
+{
+    margin-top: 1.5rem;
+}
+
+.disp-last-pics
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
 }
