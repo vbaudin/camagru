@@ -10,7 +10,8 @@ require_once __DIR__."/../Models/user.php";
 
 class UserController {
 
-  public static function register(PDO $dbh, array $params, array $messages) {
+  public static function register(PDO $dbh, array $params) {
+    $messages = array();
     if (array_key_exists("register", $params)) {
       unset($params["user_register"]);
     }
@@ -38,7 +39,7 @@ class UserController {
         $messages['error_username'] = "username not found. please contact the support";
       }
     } else {
-      print "probleme array_key dans user_controller";
+      $messages['error_key'] = "probleme array_key dans user_controller";
     }
   }
 
@@ -48,10 +49,11 @@ class UserController {
     {
       if (array_key_exists("user_login", $params)){
         if (!empty($_POST['user_login']) && !empty($_POST['user_password'])){
-          
+          $message['success_login'] = " ";//FUNCTION;
         } else {
-          $messages['login_error'] = "Your login or password is incorrect";
+          $messages['error_login'] = "Your login or password is incorrect";
         }
+        return $messages;
       }
       else {
         if (empty($params['user_username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $params['user_username'])){
@@ -77,5 +79,5 @@ class UserController {
     }
     return $messages;
   }
-  
+
 }
