@@ -1,23 +1,20 @@
-<?php include('header.php');
-date_default_timezone_set('UTC');
+<?php
+ini_set('display_errors', 1);
+define('ROOT', dirname(__FILE__));
+require_once(ROOT.'/Views/header.php') 
 ?>
-<!DOCTYPE html>
+<div class="fake-row"></div>
+<div class="row flex-wrap">
+    <aside class="take-pics">
+        <h3>Take your pics</h3>
+    </aside>
+    <aside class="last-pics">
+        <h3>Last pics</h3>
+    </aside>
+</div>
 
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Home</title>
-</head>
-
-<body>
-  <div class="container">
-    <div class="content">
-      <p>
-        Page Home
-      </p>
-    </div>
-  </div>
-
-</body>
-<?php include('footer.php') ?>
-</html>
+<div class="fake-row"></div>
+<div class="fake-row"></div>
+<div class="fake-row"></div>
+<div class="fake-row"></div>
+<?php require_once(ROOT.'/Views/footer.php') ?>
