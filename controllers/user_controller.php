@@ -48,7 +48,7 @@ class UserController {
     {
       if (array_key_exists("user_login", $params)){
         if (!empty($_POST['user_login']) && !empty($_POST['user_password'])){
-          
+
         } else {
           $messages['login_error'] = "Your login or password is incorrect";
         }
@@ -78,4 +78,14 @@ class UserController {
     return $messages;
   }
 
+  public static function login_check(PDO $dbh, array $params) {
+    if (User::exists($dbh, $params)) {
+      $hashed_password = User::hash_pwd($params["password"]);
+      $tmp = User::find($dbh, "username", $params["username"]);
+      if ($hashed_password === $tmp["password"]) {
+        return "The Id and the Password are corrects."
+      }
+    }
+    return "error";
+  }
 }
