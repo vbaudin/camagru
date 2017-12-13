@@ -1,7 +1,7 @@
 <?php
 session_start();
 ini_set('display_errors', 1);
-require_once __DIR__."/../Controllers/user_controller.php"?>
+require_once(__DIR__."/../Controllers/user_controller.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,8 +21,9 @@ require_once __DIR__."/../Controllers/user_controller.php"?>
                         <h1>Camagru</h1>
                     </div>
                     <div class="topbar-right">
-                        <a href="register.php">S'inscrire</a>
-                        <a href="register.php">Se connecter</a>
+                        <a href="index.php">Home</a>
+                        <a href="gallery.php">Gallery</a>
+                        <a href="register.php">Sign-in</a>
                     </div>
                 </div>
                 <div class="topbar-quote">

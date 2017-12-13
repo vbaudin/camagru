@@ -1,7 +1,8 @@
-<?php session_start();
-require_once __DIR__."/controllers/user_controller.php"?>
+<?php
+session_start();
+require_once(__DIR__."/Controllers/user_controller.php");
+?>
 <!DOCTYPE html>
-
 <html>
 <head>
   <meta charset="utf-8">

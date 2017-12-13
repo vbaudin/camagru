@@ -12,8 +12,8 @@
     </aside>
     <aside class="last-pics">
         <h3>Last pics</h3>
-        <div class="disp-last-pics">
-          <canvas id="canvas"></canvas>
+        <div class="disp-last-pics" id="lastpics">
+          <!-- <canvas id="canvas"></canvas> -->
         <!-- <img src="http://placekitten.com/g/320/261" id="photo" alt="photo"> -->
         </div>
     </aside>
@@ -31,9 +31,10 @@
   var streaming = false,
       video        = document.querySelector('#video'),
       cover        = document.querySelector('#cover'),
-      canvas       = document.querySelector('#canvas'),
+      // canvas       = document.querySelector('#canvas'),
       photo        = document.querySelector('#photo'),
       startbutton  = document.querySelector('#startbutton'),
+      lastpics     = document.querySelector('#lastpics'),
       width = 320,
       height = 0
 
@@ -66,28 +67,32 @@
       height = video.videoHeight / (video.videoWidth/width)
       video.setAttribute('width', width)
       video.setAttribute('height', height)
-      canvas.setAttribute('width', width)
-      canvas.setAttribute('height', height)
+      // canvas.setAttribute('width', width)
+      // canvas.setAttribute('height', height)
       streaming = true
     }
   }, false)
 
   function takepicture() {
+
+    const canvas        = document.createElement("canvas");
+    // const canvasContent = document.createTextNode("Salutations !")
     canvas.width = width
     canvas.height = height
     canvas.getContext('2d').drawImage(video, 0, 0, width, height)
     const data = canvas.toDataURL('image/png')
-    console.log(data)
-    const xhr = new XMLHttpRequest()
-    xhr.open("POST", 'index.php', true)
-    //Send the proper header information along with the request
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xhr.onreadystatechange = function() {//Call a function when the state changes.
-        if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-            // Request finished. Do processing here.
-        }
-    }
-    xhr.send("foo=bar&lorem=ipsum") 
+    lastpics.appendChild(canvas)
+
+    // const xhr = new XMLHttpRequest()
+    // xhr.open("POST", 'index.php', true)
+    // //Send the proper header information along with the request
+    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+    // xhr.onreadystatechange = function() {//Call a function when the state changes.
+    //     if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+    //         // Request finished. Do processing here.
+    //     }
+    // }
+    // xhr.send("foo=bar&lorem=ipsum") 
     // photo.setAttribute('src', data)
   }
 
@@ -98,5 +103,3 @@
 
 })()
 </script>
-
-<?php echo "toto =".$_POST['foo'] ?>

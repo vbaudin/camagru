@@ -251,8 +251,13 @@ footer
 .disp-last-pics
 {
     display: flex;
+    height: 80%;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    overflow: auto;
+}
+
+canvas
+{
     margin-top: 1rem;
 }
