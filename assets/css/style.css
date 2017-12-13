@@ -100,9 +100,9 @@ h1
 
 .take-pics
 {
-    height: 440px;
-    width: 550px;
-    background-color: #502F4C;
+    /* height: 440px;
+    width: 550px; */
+    /* background-color: #502F4C; */
     /* margin-left: 45px; */
     margin: auto;
     border-radius: 20px;
@@ -245,7 +245,7 @@ footer
 
 .btn-take-pic
 {
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
 }
 
 .disp-last-pics
@@ -280,4 +280,41 @@ canvas
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+button
+{
+    background-color: #C8B8DB;
+    font-family: 'Indie Flower', cursive;    
+}
+
+.frame
+{
+    /* margin: 1rem; */
+    border-top: solid 6px #C8B8DB;
+    margin-top: 20px;
+    height: 240px;
+    width: 650px;
+    background-color: #502F4C;
+    border-radius: 20px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.toto
+{
+    border-radius: 20px;
+    background-color: #502F4C;
+}
+
+.frame img
+{
+    width: 130px;
+    height: 130px;
+    display: block;
+}
+
+.frame input
+{
+    text-align: center;
 }
