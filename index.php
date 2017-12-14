@@ -24,15 +24,10 @@
         <input type="checkbox" id="frame-river" data-src="assets/pics/frames/river.png">
       </div>
     </div>
-    <!-- <canvas id="canvas"></canvas> -->
-    <!-- <img src="http://placekitten.com/g/320/261" id="photo" alt="photo"> -->
   </aside>
   <aside class="last-pics">
       <h3>Last pics</h3>
-      <div class="disp-last-pics" id="lastpics">
-        <!-- <canvas id="canvas"></canvas> -->
-      <!-- <img src="http://placekitten.com/g/320/261" id="photo" alt="photo"> -->
-      </div>
+      <div class="disp-last-pics" id="lastpics"></div>
   </aside>
 </div>
 
@@ -44,7 +39,7 @@
 
 <script>
 
-const video        = document.querySelector('#video')
+// const video        = document.querySelector('#video')
 const cover        = document.querySelector('#cover')
 const photo        = document.querySelector('#photo')
 const startbutton  = document.querySelector('#startbutton')
@@ -62,7 +57,7 @@ navigator.getUserMedia =  navigator.getUserMedia ||
 if (navigator.getUserMedia) {
 navigator.getUserMedia({ audio: false, video: { width: width, height: 240 } },
     stream => {
-      var video = document.querySelector('video')
+      let video = document.querySelector('#video')
       video.src = window.URL.createObjectURL(stream)
       video.onloadedmetadata = e => {
         video.play()
