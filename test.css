@@ -1,0 +1,7 @@
+.resize{
+    height: 240px;
+    width: 320px;
+    position: absolute;
+    top: 25px;
+    left: 30px;
+}
