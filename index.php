@@ -7,7 +7,7 @@
       <div class="video flex-center" id="video-render">
         <video class="video-stream" id="video"></video>
       </div>
-      <button class="btn-take-pic" id="startbutton" disabled>Prendre une photo</button>
+      <button class="btn-take-pic" id="takePicBtn" disabled>Prendre une photo</button>
     </div>
     <div class="frame flex-center">
       <div class="flex-center">
@@ -26,7 +26,7 @@
   </aside>
   <aside class="last-pics">
       <h3>Last pics</h3>
-      <div class="disp-last-pics" id="lastpics"></div>
+      <div class="disp-last-pics" id="lastPics"></div>
   </aside>
 </div>
 
@@ -35,5 +35,7 @@
 <div class="fake-row"></div>
 <div class="fake-row"></div>
 
-<script src="assets/js/takePics.js"></script>
+<script src="assets/js/webcam/takePic.js"></script>
+<script src="assets/js/webcam/frameHandler.js"></script>
+<script src="assets/js/webcam/picHandler.js"></script>
 <?php require_once(__DIR__.'/Views/footer.php'); ?>

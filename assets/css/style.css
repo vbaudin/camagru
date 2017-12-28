@@ -327,3 +327,9 @@ button
 {
     text-align: center;
 }
+
+.disp-last-pics div div
+{
+    display: flex;
+    justify-content: space-around;
+}
