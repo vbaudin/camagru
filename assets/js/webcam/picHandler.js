@@ -1,10 +1,14 @@
 const deletePic = (e) => {
-    console.log(e.srcElement)
-    e.srcElement.remove()
+    const mainDiv = e.path[2]
+    mainDiv.remove()
 }
 const picHandler = () => {
-    const pics = Array.from(document.querySelectorAll("canvas"))
-    pics.forEach(pic => {
-        pic.addEventListener('click', deletePic)
+    const deleteBtns = Array.from(document.querySelectorAll("#delete"))
+    const pushToGalBtns = Array.from(document.querySelectorAll("#pushToGalBtn"))
+    deleteBtns.forEach(deleteBtn => {
+        deleteBtn.addEventListener('click', deletePic)
+    })
+    pushToGalBtns.forEach(pushToGalBtn => {
+        pushToGalBtn.addEventListener('click', sendPic)
     })
 }

@@ -7,7 +7,7 @@
       <div class="video flex-center" id="video-render">
         <video class="video-stream" id="video"></video>
       </div>
-      <button class="btn-take-pic" id="takePicBtn" disabled>Prendre une photo</button>
+      <button class="btn-take-pic" id="takePicBtn" disabled>Take a picture</button>
     </div>
     <div class="frame flex-center">
       <div class="flex-center">
@@ -38,4 +38,5 @@
 <script src="assets/js/webcam/takePic.js"></script>
 <script src="assets/js/webcam/frameHandler.js"></script>
 <script src="assets/js/webcam/picHandler.js"></script>
+<script src="assets/js/ajax/pics.js"></script>
 <?php require_once(__DIR__.'/Views/footer.php'); ?>

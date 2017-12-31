@@ -1,4 +1,3 @@
-// const video        = document.querySelector('#video')
 const cover        = document.querySelector('#cover')
 const photo        = document.querySelector('#photo')
 const takePicBtn   = document.querySelector('#takePicBtn')
@@ -47,6 +46,8 @@ const picDisplay = (canvas) => {
 
   pushToGalBtn.innerHTML = 'Push to gallery'
   deleteBtn.innerHTML = 'Delete'
+  deleteBtn.setAttribute("id", "delete");
+  pushToGalBtn.setAttribute("id", "pushToGalBtn");
   lastPics.appendChild(canvasBox)
   canvasBox.appendChild(canvas)
   canvasBox.appendChild(btnBox)
@@ -61,22 +62,9 @@ const takepicture = () => {
   canvas.height = height
   canvas.getContext('2d').drawImage(video, 0, 0, width, height)
   canvas.getContext('2d').drawImage(frameImg, 0, 0, width, height)
-
+  
   picDisplay(canvas)
   picHandler()
-  
-  const data = canvas.toDataURL('image/png')
-  // const xhr = new XMLHttpRequest()
-  // xhr.open("POST", 'index.php', true)
-  // //Send the proper header information along with the request
-  // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-  // xhr.onreadystatechange = function() {//Call a function when the state changes.
-  //     if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-  //         // Request finished. Do processing here.
-  //     }
-  // }
-  // xhr.send("foo=bar&lorem=ipsum") 
-  // photo.setAttribute('src', data)
 }
 
 takePicBtn.addEventListener('click', e => {
